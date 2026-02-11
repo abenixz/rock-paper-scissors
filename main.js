@@ -13,29 +13,78 @@ function getComputerChoice() {
         chosenWord = paper;
     } else {
         chosenWord = scissors;
-    } 
+    }
     return chosenWord;
-}  
+}
 
 function getHumanChoice() {
     let humanChoice = prompt("Enter your choice from rock, paper or scissors!");
+    return humanChoice;
+}
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+
+    // Convert humanChoice to lowercase to make it case-insensitive
+    humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice === null) {
         console.log("We will play another time.");
     } else if (humanChoice === "") {
-        console.log("You didn't input nothing, You can try again");
+        console.log("You didn't input anything, You can try again");
     } else if (!isNaN(humanChoice)) {
-        console.log("Enter a valid choice one from Rock, Paper or Scissor and Try again!");
-    } else if (humanChoice === getComputerChoice()) {
-        
-        console.log("You: " + humanChoice);
-        console.log("Computer: " + getComputerChoice());
-        console.log("We are in a tie");
-        
-    } else if ( humanChoice !== getComputerChoice()) {
-        console.log("You: " + humanChoice);
-        console.log("Computer: " + getComputerChoice());
+        console.log("Enter a valid choice one from Rock, Paper, or Scissors and try again!");
+    } else {
+
+        function isATie(humanChoice, computerChoice) {
+            return humanChoice === computerChoice;
+        }
+
+        if (isATie(humanChoice, computerChoice)) {
+            console.log("You: " + humanChoice);
+            console.log("Computer: " + computerChoice);
+            console.log("It is a tie, no one scored!");
+        } else if (humanChoice === "rock" && computerChoice === "paper") {
+            console.log("You: " + humanChoice);
+            console.log("Computer: " + computerChoice);
+            console.log("Paper covers Rock, Computer wins!");
+            computerScore++;
+        } else if (humanChoice === "rock" && computerChoice === "scissors") {
+            console.log("You: " + humanChoice);
+            console.log("Computer: " + computerChoice);
+            console.log("Rock crushes Scissors, You win!");
+            humanScore++;
+        } else if (humanChoice === "paper" && computerChoice === "rock") {
+            console.log("You: " + humanChoice);
+            console.log("Computer: " + computerChoice);
+            console.log("Paper covers Rock, You win!");
+            humanScore++;
+        } else if (humanChoice === "paper" && computerChoice === "scissors") {
+            console.log("You: " + humanChoice);
+            console.log("Computer: " + computerChoice);
+            console.log("Scissors cut Paper, Computer wins!");
+            computerScore++;
+        } else if (humanChoice === "scissors" && computerChoice === "rock") {
+            console.log("You: " + humanChoice);
+            console.log("Computer: " + computerChoice);
+            console.log("Rock crushes Scissors, Computer wins!");
+            computerScore++;
+        } else if (humanChoice === "scissors" && computerChoice === "paper") {
+            console.log("You: " + humanChoice);
+            console.log("Computer: " + computerChoice);
+            console.log("Scissors cut Paper, You win!");
+            humanScore++;
+        } else {
+            console.log("Your input is not one of the choice, try to input correctly!");
+        }
     }
     return;
 }
-getHumanChoice()
+// playRound(getHumanChoice(), getComputerChoice());
+
+function playGame() {
+
+
+}
