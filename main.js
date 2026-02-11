@@ -26,13 +26,10 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-
     function playRound(humanChoice, computerChoice) {
 
         humanChoice = humanChoice.toLowerCase();
 
-        
-        // Check for null and invalid input
         if (humanChoice === null) {
             console.log("We will play another time.");
         } else if (humanChoice === "") {
@@ -40,12 +37,7 @@ function playGame() {
         } else if (!isNaN(humanChoice)) {
             console.log("Enter a valid choice one from Rock, Paper, or Scissors and try again!");
         } else {
-
-            function isATie(humanChoice, computerChoice) {
-                return humanChoice === computerChoice;
-            }
-
-            if (isATie(humanChoice, computerChoice)) {
+            if (humanChoice === computerChoice) {
                 console.log("You: " + humanChoice);
                 console.log("Computer: " + computerChoice);
                 console.log("It is a tie, no one scored!");
