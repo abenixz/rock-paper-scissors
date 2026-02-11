@@ -1,1 +1,1 @@
-# A simple in-console Rock Paper Scissors built for The Odin Project Foundations curriculums.  
+### A simple in-console Rock Paper Scissors built for The Odin Project Foundations curriculums.  
