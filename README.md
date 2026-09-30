@@ -1,3 +1,6 @@
-### Rock Paper Scissors Game (In-Console)
+### A Simple Rock Paper Scissors Game
 
-A simple in-console Rock Paper Scissors built for The Odin Project Foundations curriculums.  
+A simple rock paper scissors game built for The Odin Project Foundations curriculums. 
+
+Live Preview - https://abenixz.github.io/rock-paper-scissors/ 
+
